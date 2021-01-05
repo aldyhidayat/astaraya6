@@ -25,7 +25,7 @@ SECRET_KEY = 'hmi3(@z9j-rn*$rk3k=xf(008)&*u4$tz7q!wfg3*8bl5!6k08'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['astaraya.herokuapp.com']
+ALLOWED_HOSTS = ['astaraya2.herokuapp.com']
 
 
 # Application definition
