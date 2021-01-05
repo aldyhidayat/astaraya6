@@ -1,0 +1,38 @@
+{% if is_paginated %}
+<nav aria-label="storelist">
+	<ul class="pagination">	
+		{% if page_obj.has_previous %}
+			<li class="page-item">
+		    	<a class="page-link" href="{% url 'store:perempuan' page_obj.previous_page_number %}">Sebelumnya</a>
+			</li>
+		{% else %}
+			<li class="page-item disabled">
+	    		<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Sebelumnya</a>
+		{% endif %}
+
+		 {% for page in paginator.page_range %}
+
+		    	{% if page is page_obj.number %}
+		    	
+		    	 <li class="page-item active" aria-current="page">
+		    	 	<span class="page-link" href="#">{{page}} <span class="sr-only">(current)</span></span>
+		    	 </li>	
+		    	
+		    	{% else %}
+		    	 <li class="page-item">
+		    	 	<a class="page-link" href="{% url 'store:perempuan' page%}">{{page}} </a>
+		    	 </li>
+		    	{% endif %}
+		    {% endfor %}
+
+		{% if page_obj.has_next %}
+			<li class="page-item">
+		    	<a class="page-link" href="{% url 'store:perempuan' page_obj.next_page_number %}">Berikutnya</a>
+			</li>
+		{% else %}
+			<li class="page-item disabled">
+	    		<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Berikutnya</a>
+		{% endif %}
+	</ul>
+</nav>
+{% endif %}

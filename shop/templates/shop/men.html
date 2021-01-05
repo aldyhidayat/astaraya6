@@ -1,0 +1,25 @@
+{% extends "shop/main.html" %}
+{% load static %}
+{% block page_title %}
+	Laki-Laki
+{% endblock page_title %}
+{% block content %}
+	<div class="row">
+		{% for product in produts  %}
+			<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 px-1">
+					{% if product.image %}
+					<img class="img-fluid" src="{{product.imageURL}}">
+				{% endif %}
+				<div class="box-element product">
+					<h5>{{product.name}}</h5>
+					<h6 style="display:inline-block;">Rp. {{product.price|floatformat:3}}</h6>
+					<hr>
+					<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">+ Keranjang</button>
+					<a class="btn btn-outline-success" href="">Lihat</a>
+				</div>
+				<br>
+				
+			</div>
+		{% endfor %}
+	</div>
+{% endblock content %}
