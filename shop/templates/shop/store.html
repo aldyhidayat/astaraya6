@@ -16,7 +16,7 @@
 					<h5>{{product.name}}</h5>
 					<h6 style="display:inline-block;">Rp. {{product.price|floatformat:3}}</h6>
 					<hr>
-					<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">+ Keranjang</button>
+					<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Keranjang</button>
 					<a class="btn btn-outline-success" href="{% url 'store:detail' product.slug %}">Lihat</a>
 				</div>
 				<br>
